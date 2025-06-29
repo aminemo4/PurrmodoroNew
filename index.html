@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Purrmodoro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <img src="images/Logo.png" alt="Logo" />
+      </a>
+      <svg class="menu" width="30" height="24" viewBox="0 0 30 24">
+        <path d="M0,3 30,3" stroke="#000" stroke-width="3" stroke-linecap="round" />
+        <path d="M0,12 30,12" stroke="#000" stroke-width="3" stroke-linecap="round" />
+        <path d="M0,21 30,21" stroke="#000" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </nav>
+  </header>
+
+  <!-- FULLSCREEN WEBGL CANVAS -->
+  <canvas class="background-canvas"></canvas>
+
+  <!-- MAIN CONTENT -->
+  <main class="Sec2">
+    <div class="glass-container">
+      <!-- Live clock -->
+      <div id="clock">00:00:00</div>
+      <!-- Countdown timer -->
+      <div id="countdown" class="hidden"></div>
+
+      <!-- Plain buttons -->
+      <div class="controls">
+        <button id="setTimerBtn">Set Timer</button>
+        <button id="addMusicBtn">Add Music</button>
+        <button id="pauseBtn"   class="hidden">Pause Timer</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- SET TIMER DIALOG -->
+  <dialog id="timerDialog">
+    <button class="dialog-close" aria-label="Close">×</button>
+    <form method="dialog" class="dialog-form">
+      <label>
+        Working time (mins):
+        <input type="text" id="workInput" placeholder="30" />
+      </label>
+      <label>
+        Break time (mins):
+        <input type="text" id="breakInput" placeholder="5" />
+      </label>
+      <button id="confirmTimer">Confirm interval</button>
+    </form>
+  </dialog>
+
+  <!-- ADD MUSIC DIALOG -->
+  <dialog id="musicDialog">
+    <button class="dialog-close" aria-label="Close">×</button>
+    <form method="dialog" class="dialog-form">
+      <label>
+        YouTube link:
+        <input type="url" id="ytLink" placeholder="https://…" />
+      </label>
+      <label>
+        Spotify URI:
+        <input type="text" id="spLink" placeholder="spotify:…" />
+      </label>
+      <button id="confirmMusic">Add Music</button>
+    </form>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
